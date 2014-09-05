@@ -8,8 +8,8 @@ Crack the django password on the way. By default Django use pbkdf2 and sha256 me
 
 Tools
 -----
-* ```hashcat. This can crack password from hashes based on word dictionaries. There are tones of algorithms built-in. Good dictionary is important. The link is here: [hashcat offical link](http://www.hashcat.net/ "hashcat offical link").``` 
-```rainbow table generator/cracker: rainbowcrack (rcrack, rt2rtc, rtc2rt, rsort, rtgen) The link is here: [rainbow crack offical link](http://project-rainbowcrack.com// "project-rainbowcrack").```
+* ```hashcat. This can crack password from hashes based on word dictionaries. There are tones of algorithms built-in. Good dictionary is important. <a href="http://www.hashcat.net/" target="_blank">hashcat offical link</a>``` 
+```rainbow table generator/cracker: rainbowcrack (rcrack, rt2rtc, rtc2rt, rsort, rtgen) . <a href="http://project-rainbowcrack.com" target="_blank">project-rainbowcrack link</a>```
 * The rainbow table might be very large. Normally it would be like more than hundreds Giga Bytes. So you could download or make one by own. But sometimes it would take too long to generate the rainbow table. For instance in this case Django uses PBKDF2 and algorithm sha256 to encrypt password iteration by iteration, which means it will take very long to generate a single password or a HASH. So brute-force cracking is somehow lousy. Or you have super computer, things would be better. Sometimes you don't.
 * So the summery here is:  To crack the django's password, there are two ways. 1) brute-force cracking which takes very long and hard-working on computer expense. 2) middle attack which means user's password can be captured alive. This has something to do with the art of deception. Pratical and social engineering.
 
