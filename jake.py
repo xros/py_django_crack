@@ -6,6 +6,9 @@ import struct
 import binascii
 import base64
 '''
+Copyright to Alexander Liu
+For entertainment only :)
+
 To decrypt the password in the Django framework, you need to get
 the value which is stored in the database table 'auth_user' column 'password'.
 
