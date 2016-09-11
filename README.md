@@ -30,7 +30,7 @@ In this case, **pbkdf2_sha256** is the encryption algorithm, and **12000** is th
 > took 100ms on a 2.2Ghz Core 2 Duo. This is probably the bare
 > minimum for security given 1000 iterations was recommended in 2001.
 
-This is also a standalone module derived from Django. Pure Python. Any other webframe work can use this module.
+This is also a standalone module derived from Django. Pure Python. Any other web framework can use this module.
 
 **When coding**:
 
