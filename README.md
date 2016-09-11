@@ -18,37 +18,41 @@ For example the encryped password is:
 
     {algorithm}${iteration times}${salt}${encryped password}
 
-In this case, pbkdf2_sha256 is the encryption algorithm, and 12000 is the iteration times, 
+In this case, **pbkdf2_sha256** is the encryption algorithm, and **12000** is the iteration times, 
 
 `Lz8oA7gW43mJ` is the salt, 
 
 `Lz8oA7gW43mJ$N/DzMkLc/CX4oKHrU2bSPul3svNOmz8CYthM1JrR4Mo=`  is the base64 encoded password
 
 **Note**:
-    As of 2011, 10,000 iterations was the recommended default which
-    took 100ms on a 2.2Ghz Core 2 Duo. This is probably the bare
-    minimum for security given 1000 iterations was recommended in 2001.
+
+> As of 2011, 10,000 iterations was the recommended default which
+> took 100ms on a 2.2Ghz Core 2 Duo. This is probably the bare
+> minimum for security given 1000 iterations was recommended in 2001.
 
 This is also a standalone module derived from Django. If any other webframe work can use this module.
 
 **When coding**:
-    >>> from jake import give_back_hashed
-    >>> from jake import get_base64_hashed
-    >>> a = give_base64_hashed('the_password', 'the_salt', 'iteration_times', 'the_hashlib_digest_object(the algorithm)')
-    >>> # this is the password which encrypted in the database table 'auth_user' column 'password'
-    >>> print a
-    N/DzMkLc/CX4oKHrU2bSPul3svNOmz8CYthM1JrR4Mo=
-    >>> # or you can do this
-    >>> import hashlib
-    >>> b = give_base64_hashed('the_password', 'the_salt', 'iteration_times', hashlib.sha256)
-    >>> print b
-    N/DzMkLc/CX4oKHrU2bSPul3svNOmz8CYthM1JrR4Mo=
-    >>> # To get the real sha256 hashed value
-    >>> c = give_back_hashed(b)
-    >>> print c
-    '7\xf0\xf32B\xdc\xfc%\xf8\xa0\xa1\xebSf\xd2>\xe9w\xb2\xf3N\x9b?\x02b\xd8L\xd4\x9a\xd1\xe0\xca'
-    >>> # you need other tools such as 'hashcat' or 'crack' to generate HASHes from 
-    >>> # a dictionay to compare them with this.
+
+```
+>>> from jake import give_back_hashed
+>>> from jake import get_base64_hashed
+>>> a = give_base64_hashed('the_password', 'the_salt', 'iteration_times', 'the_hashlib_digest_object(the algorithm)')
+>>> # this is the password which encrypted in the database table 'auth_user' column 'password'
+>>> print a
+N/DzMkLc/CX4oKHrU2bSPul3svNOmz8CYthM1JrR4Mo=
+>>> # or you can do this
+>>> import hashlib
+>>> b = give_base64_hashed('the_password', 'the_salt', 'iteration_times', hashlib.sha256)
+>>> print b
+N/DzMkLc/CX4oKHrU2bSPul3svNOmz8CYthM1JrR4Mo=
+>>> # To get the real sha256 hashed value
+>>> c = give_back_hashed(b)
+>>> print c
+'7\xf0\xf32B\xdc\xfc%\xf8\xa0\xa1\xebSf\xd2>\xe9w\xb2\xf3N\x9b?\x02b\xd8L\xd4\x9a\xd1\xe0\xca'
+>>> # you need other tools such as 'hashcat' or 'crack' to generate HASHes from 
+>>> # a dictionay to compare them with this.
+```
 
 Tools
 -----
