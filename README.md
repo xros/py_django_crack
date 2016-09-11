@@ -13,7 +13,9 @@ For entertainment only :)
 To decrypt the password in the Django framework, you need to get the value which is stored in the database table 'auth_user' column 'password'.
 
 For example the encryped password is:
+
     pbkdf2_sha256$12000$Lz8oA7gW43mJ$N/DzMkLc/CX4oKHrU2bSPul3svNOmz8CYthM1JrR4Mo=
+
     {algorithm}${iteration times}${salt}${encryped password}
 
 In this case, pbkdf2_sha256 is the encryption algorithm, and 12000 is the iteration times, 
