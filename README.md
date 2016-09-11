@@ -34,7 +34,7 @@ This is also a standalone module derived from Django. If any other webframe work
 
 **When coding**:
 
-```
+```python
 >>> from jake import give_back_hashed
 >>> from jake import get_base64_hashed
 >>> a = give_base64_hashed('the_password', 'the_salt', 'iteration_times', 'the_hashlib_digest_object(the algorithm)')
