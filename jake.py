@@ -1,5 +1,11 @@
+import os
+os.path.basename(os.path.dirname(os.path.realpath(__file__)))
+
 import hashlib
 import hmac
+# for python3.x
+from promise import Promise
+
 import six
 import operator
 import struct
@@ -7,8 +13,7 @@ import binascii
 import base64
 import functools
 
-# for python3.x
-from promise import Promise
+
 '''
 Copyright to Alexander Liu
 For entertainment only :)
@@ -77,8 +82,10 @@ def force_bytes(s, encoding='utf-8', strings_only=False, errors='strict'):
 
     If strings_only is True, don't convert (some) non-string-like objects.
     """
+    '''
     if isinstance(s, six.memoryview):
         s = bytes(s)
+    '''
     if isinstance(s, bytes):
         if encoding == 'utf-8':
             return s
