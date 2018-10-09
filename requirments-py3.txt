@@ -1,1 +1,1 @@
-promise
+promise==2.2.1
