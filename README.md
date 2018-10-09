@@ -10,6 +10,8 @@ Crack the django password on the way. By default Django use pbkdf2 and sha256 me
 
 **Branch `py3`** and `master` are for Python 3
 
+For Python3, you need install package promise first. `pip3 install promise` or `pip3 install -r requirments-py3.txt`
+
 ### Usage
 
 For entertainment only :)
