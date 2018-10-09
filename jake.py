@@ -5,6 +5,10 @@ import operator
 import struct
 import binascii
 import base64
+import functools
+
+# for python3.x
+from promise import Promise
 '''
 Copyright to Alexander Liu
 For entertainment only :)
@@ -140,13 +144,13 @@ def pbkdf2(password, salt, iterations, dklen=0, digest=None):
     def F(i):
         def U():
             u = salt + struct.pack(b'>I', i)
-            for j in xrange(int(iterations)):
+            for j in range(int(iterations)):
                 dig1, dig2 = inner.copy(), outer.copy()
                 dig1.update(u)
                 dig2.update(dig1.digest())
                 u = dig2.digest()
                 yield _bin_to_long(u)
-        return _long_to_bin(reduce(operator.xor, U()), hex_format_string)
+        return _long_to_bin(functools.reduce(operator.xor, U()), hex_format_string)
 
     T = [F(x) for x in range(1, l + 1)]
     return b''.join(T[:-1]) + T[-1][:r]
@@ -163,4 +167,4 @@ def get_base64_hashed(password, salt, iterations, dklen=0, digest=None):
 def give_back_hashed(base64string):
     '''
     '''
-    return base64.decodestring(base64string)
+    return base64.b64decode(base64string)
